@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "gs1": "https://www.gs1.org/voc/",
+    "tf": "https://www.tysonfoods.com/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Order": "schema:Order",
+    "PurchaseOrder": "tf:PurchaseOrder",
+    "Shipment": "tf:Shipment",
+    "AdvanceShipNotice": "tf:AdvanceShipNotice",
+    "TradingPartner": "schema:Organization",
+    "Product": "schema:Product",
+    "OrderItem": "schema:OrderItem",
+    "FoodProduct": "schema:FoodProduct",
+    "Corporation": "schema:Corporation",
+
+    "orderId": {
+      "@id": "schema:orderNumber",
+      "@type": "xsd:string"
+    },
+    "partnerId": {
+      "@id": "tf:tradingPartnerId",
+      "@type": "xsd:string"
+    },
+    "orderStatus": {
+      "@id": "schema:orderStatus",
+      "@type": "@vocab"
+    },
+    "orderDate": {
+      "@id": "schema:orderDate",
+      "@type": "xsd:dateTime"
+    },
+    "trackingNumber": {
+      "@id": "gs1:trackingID",
+      "@type": "xsd:string"
+    },
+    "carrier": {
+      "@id": "schema:provider",
+      "@type": "@id"
+    },
+    "productId": {
+      "@id": "gs1:gtin",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "schema:orderQuantity",
+      "@type": "xsd:integer"
+    },
+    "shipDate": {
+      "@id": "tf:shipDate",
+      "@type": "xsd:date"
+    },
+    "deliveryDate": {
+      "@id": "schema:expectedArrivalFrom",
+      "@type": "xsd:date"
+    },
+    "shipToAddress": {
+      "@id": "schema:deliveryAddress",
+      "@type": "schema:PostalAddress"
+    }
+  }
+}

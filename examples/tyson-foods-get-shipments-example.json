@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.tysonfoods.com/shipments",
+    "headers": {
+      "Authorization": "Bearer {access_token}",
+      "Content-Type": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "shipments": [
+        {
+          "id": "SHIP-2026-005678",
+          "orderId": "PO-2026-001234",
+          "carrier": "FedEx Freight",
+          "trackingNumber": "786342867442",
+          "status": "in_transit"
+        },
+        {
+          "id": "SHIP-2026-005679",
+          "orderId": "PO-2026-001235",
+          "carrier": "UPS",
+          "trackingNumber": "1Z999AA10123456784",
+          "status": "delivered"
+        }
+      ]
+    }
+  }
+}

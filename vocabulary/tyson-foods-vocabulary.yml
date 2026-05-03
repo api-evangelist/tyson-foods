@@ -1,0 +1,158 @@
+name: Tyson Foods
+description: >-
+  Vocabulary and taxonomy for Tyson Foods B2B trading partner integration,
+  supply chain, EDI, and food industry terminology.
+created: "2026-05-03"
+modified: "2026-05-03"
+tags:
+  - Tyson Foods
+  - Supply Chain
+  - EDI
+  - Food Industry
+  - B2B Integration
+
+terms:
+
+  # B2B Integration
+  - term: EDI
+    definition: >-
+      Electronic Data Interchange. The structured computer-to-computer exchange
+      of business documents in a standard electronic format between business
+      partners. Tyson Foods uses EDI for purchase orders (850), order
+      acknowledgments (855), advance ship notices (856), and invoices (810).
+    tags: [B2B, Integration, Standard]
+
+  - term: Trading Partner
+    definition: >-
+      A business entity (retailer, distributor, food service operator) that
+      has a B2B integration relationship with Tyson Foods for ordering,
+      fulfillment, and payment.
+    tags: [B2B, Relationship]
+
+  - term: Purchase Order
+    definition: >-
+      A formal request from a trading partner to Tyson Foods to purchase
+      specific products in defined quantities at agreed prices. Corresponds
+      to EDI transaction set 850.
+    tags: [Orders, EDI]
+
+  - term: Order Acknowledgment
+    definition: >-
+      A confirmation from Tyson Foods that a purchase order has been received
+      and accepted. Corresponds to EDI transaction set 855.
+    tags: [Orders, EDI]
+
+  - term: Advance Ship Notice
+    definition: >-
+      An electronic notification sent before a shipment arrives, containing
+      shipment details, product information, and expected delivery date.
+      Corresponds to EDI transaction set 856 (ASN).
+    tags: [Shipments, EDI]
+
+  - term: Invoice
+    definition: >-
+      The billing document issued by Tyson Foods to a trading partner after
+      shipment. Corresponds to EDI transaction set 810.
+    tags: [Finance, EDI]
+
+  # Supply Chain
+  - term: SKU
+    definition: >-
+      Stock Keeping Unit. A unique identifier for a specific product variant
+      at Tyson Foods, used for inventory management and ordering.
+    tags: [Products, Inventory]
+
+  - term: GTIN
+    definition: >-
+      Global Trade Item Number. A GS1 standard identifier for Tyson Foods
+      products, used in EDI transactions and product catalogs.
+    tags: [Products, Standards]
+
+  - term: Case Pack
+    definition: >-
+      The standard unit of ordering for Tyson Foods products, consisting
+      of a defined number of individual units per case.
+    tags: [Products, Ordering]
+
+  - term: Cold Chain
+    definition: >-
+      The temperature-controlled supply chain required for Tyson Foods
+      products to maintain food safety and quality from production
+      through delivery.
+    tags: [Logistics, Food Safety]
+
+  - term: Lot Number
+    definition: >-
+      A batch identifier assigned to a production run of Tyson Foods
+      products, used for traceability and recall management.
+    tags: [Traceability, Food Safety]
+
+  - term: Expiration Date
+    definition: >-
+      The "best by" or "use by" date for Tyson Foods products indicating
+      the end of the guaranteed quality period.
+    tags: [Food Safety, Products]
+
+  # Logistics
+  - term: Carrier
+    definition: >-
+      A transportation company (e.g., FedEx Freight, UPS, JB Hunt) used
+      to deliver Tyson Foods shipments to trading partners.
+    tags: [Logistics, Shipping]
+
+  - term: Tracking Number
+    definition: >-
+      A carrier-assigned identifier for tracking a specific shipment in
+      transit from Tyson Foods to the delivery destination.
+    tags: [Logistics, Tracking]
+
+  - term: Distribution Center
+    definition: >-
+      A Tyson Foods warehouse facility used to store and ship products
+      to trading partners across a geographic region.
+    tags: [Logistics, Facilities]
+
+  - term: Lead Time
+    definition: >-
+      The time between when a trading partner places a purchase order and
+      when the shipment arrives at their facility.
+    tags: [Logistics, Planning]
+
+  # Food Categories
+  - term: Fresh Chicken
+    definition: >-
+      Unprocessed chicken products (breast, thigh, wing, whole bird) sold
+      refrigerated and requiring cold chain logistics.
+    tags: [Products, Category]
+
+  - term: Beef Products
+    definition: >-
+      Tyson Foods beef products including ground beef, steaks, and
+      value-added beef items.
+    tags: [Products, Category]
+
+  - term: Pork Products
+    definition: >-
+      Tyson Foods pork products including bacon, ham, ribs, and
+      pork roast items.
+    tags: [Products, Category]
+
+  - term: Prepared Foods
+    definition: >-
+      Value-added, partially or fully cooked food products including frozen
+      meals, wings, tenders, nuggets, and deli items.
+    tags: [Products, Category]
+
+  # Compliance
+  - term: FSMA
+    definition: >-
+      Food Safety Modernization Act. US law governing food safety practices
+      that Tyson Foods must comply with, affecting traceability requirements
+      in trading partner integrations.
+    tags: [Compliance, Food Safety, Regulation]
+
+  - term: USDA
+    definition: >-
+      United States Department of Agriculture. The federal agency that
+      inspects and regulates Tyson Foods production facilities and products.
+    tags: [Compliance, Regulation]

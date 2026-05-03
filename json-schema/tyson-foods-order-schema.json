@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api.tysonfoods.com/schemas/order",
+  "title": "Tyson Foods Order",
+  "description": "A purchase order in the Tyson Foods B2B trading partner system",
+  "type": "object",
+  "required": ["id", "partnerId", "status", "createdAt"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique order identifier (purchase order number)"
+    },
+    "partnerId": {
+      "type": "string",
+      "description": "Trading partner identifier"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "confirmed", "processing", "shipped", "delivered", "cancelled"],
+      "description": "Current order status"
+    },
+    "items": {
+      "type": "array",
+      "description": "List of ordered products",
+      "items": {
+        "type": "object",
+        "required": ["productId", "quantity"],
+        "properties": {
+          "productId": {
+            "type": "string",
+            "description": "Tyson Foods product identifier"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Quantity ordered (in base product units)"
+          },
+          "unitOfMeasure": {
+            "type": "string",
+            "description": "Unit of measure (CS=Case, EA=Each, LB=Pound)"
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "Price per unit"
+          }
+        }
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the order was created"
+    },
+    "requiredDeliveryDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Required delivery date for the order"
+    },
+    "shipToAddress": {
+      "type": "object",
+      "description": "Delivery destination address",
+      "properties": {
+        "name": {"type": "string"},
+        "street": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "string"},
+        "zip": {"type": "string"},
+        "country": {"type": "string"}
+      }
+    }
+  }
+}

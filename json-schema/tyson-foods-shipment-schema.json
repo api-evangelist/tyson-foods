@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api.tysonfoods.com/schemas/shipment",
+  "title": "Tyson Foods Shipment",
+  "description": "A shipment record in the Tyson Foods B2B trading partner system (Advance Ship Notice / ASN)",
+  "type": "object",
+  "required": ["id", "orderId", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique shipment identifier"
+    },
+    "orderId": {
+      "type": "string",
+      "description": "Associated purchase order ID"
+    },
+    "carrier": {
+      "type": "string",
+      "description": "Shipping carrier name"
+    },
+    "trackingNumber": {
+      "type": "string",
+      "description": "Carrier tracking number"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["created", "picked_up", "in_transit", "out_for_delivery", "delivered", "exception"],
+      "description": "Current shipment status"
+    },
+    "shipDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the shipment was dispatched"
+    },
+    "estimatedDeliveryDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Estimated delivery date"
+    },
+    "actualDeliveryDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Actual delivery date (when status is delivered)"
+    },
+    "items": {
+      "type": "array",
+      "description": "Items included in this shipment",
+      "items": {
+        "type": "object",
+        "properties": {
+          "productId": {"type": "string"},
+          "quantity": {"type": "integer"},
+          "lotNumber": {"type": "string"},
+          "expirationDate": {"type": "string", "format": "date"}
+        }
+      }
+    }
+  }
+}

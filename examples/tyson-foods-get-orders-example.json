@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.tysonfoods.com/orders",
+    "headers": {
+      "Authorization": "Bearer {access_token}",
+      "Content-Type": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "orders": [
+        {
+          "id": "PO-2026-001234",
+          "partnerId": "PARTNER-789",
+          "status": "confirmed",
+          "items": [
+            {
+              "productId": "TF-CHICKEN-BREAST-10LB",
+              "quantity": 50
+            },
+            {
+              "productId": "TF-GROUND-BEEF-5LB",
+              "quantity": 25
+            }
+          ],
+          "createdAt": "2026-05-01T14:30:00Z"
+        }
+      ]
+    }
+  }
+}

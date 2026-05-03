@@ -1,0 +1,92 @@
+extends: spectral:oas
+rules:
+
+  # All summaries must use Title Case
+  tyson-foods-summary-title-case:
+    description: Operation summaries must use Title Case
+    message: "Summary '{{value}}' must use Title Case"
+    given: "$.paths[*][*].summary"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z]"
+
+  # Operation IDs must use camelCase
+  tyson-foods-operation-id-camel-case:
+    description: Operation IDs must use camelCase
+    message: "OperationId '{{value}}' must use camelCase"
+    given: "$.paths[*][*].operationId"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]+$"
+
+  # All operations should have authentication
+  tyson-foods-auth-required:
+    description: All Tyson Foods API operations should require authentication
+    message: "Operation should declare authentication security"
+    given: "$.paths[*][get,post,put,patch,delete]"
+    severity: warn
+    then:
+      field: security
+      function: truthy
+
+  # All operations should have descriptions
+  tyson-foods-operation-description:
+    description: All operations should have a description
+    message: "Operation '{{path}}' is missing a description"
+    given: "$.paths[*][get,post,put,patch,delete]"
+    severity: warn
+    then:
+      field: description
+      function: truthy
+
+  # Path parameters should have descriptions
+  tyson-foods-path-param-description:
+    description: Path parameters should have descriptions
+    message: "Path parameter '{{value}}' is missing description"
+    given: "$.paths[*][*].parameters[?(@.in == 'path')]"
+    severity: hint
+    then:
+      field: description
+      function: truthy
+
+  # Successful responses must be defined
+  tyson-foods-success-response:
+    description: Operations must define a success response
+    message: "Operation must define a 200 or 201 response"
+    given: "$.paths[*][get,post,put,patch,delete].responses"
+    severity: error
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          anyOf:
+            - required: ["200"]
+            - required: ["201"]
+            - required: ["204"]
+
+  # Tags should use Title Case
+  tyson-foods-tags-title-case:
+    description: Tags must use Title Case
+    message: "Tag '{{value}}' must use Title Case"
+    given: "$.tags[*].name"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][a-zA-Z ]+$"
+
+  # Server URLs should use HTTPS
+  tyson-foods-server-https:
+    description: API servers should use HTTPS
+    message: "Server URL '{{value}}' should use HTTPS"
+    given: "$.servers[*].url"
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"

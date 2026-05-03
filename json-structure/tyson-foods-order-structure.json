@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tyson Foods Order Structure",
+  "description": "Structural documentation of a Tyson Foods purchase order",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Purchase order number assigned by the trading partner"
+    },
+    "partnerId": {
+      "type": "string",
+      "description": "Tyson Foods-assigned trading partner identifier"
+    },
+    "status": {
+      "type": "string",
+      "description": "Order lifecycle status"
+    },
+    "items": {
+      "type": "array",
+      "description": "Ordered line items with product IDs and quantities"
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "Order creation timestamp in ISO 8601 format"
+    },
+    "requiredDeliveryDate": {
+      "type": "string",
+      "description": "Requested delivery date"
+    },
+    "shipToAddress": {
+      "type": "object",
+      "description": "Delivery address"
+    }
+  }
+}
