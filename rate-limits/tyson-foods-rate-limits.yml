@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Tyson Foods
 providerId: tyson-foods
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - B2B Integration
   - EDI
@@ -12,78 +13,25 @@ tags:
   - Fortune 100
   - Supply Chain
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Tyson Foods API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+description: Tyson Foods does not publish public API rate-limit documentation. Any throttling, quota,
+  or SLA terms are defined inside individual B2B integration contracts.
+notes: No public rate-limit documentation exists. Limits are governed by partner contract; values cannot
+  be reconciled without an active integration agreement.
+sources:
+  - https://www.tysonfoods.com/
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Tyson Foods EDI Integration API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Tyson Foods EDI Integration API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Tyson Foods EDI Integration API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Tyson Foods EDI Integration API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
+  - name: Contract-Defined Limit
     scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Tyson Foods EDI Integration API
+    metric: varies
+    limit: see partner contract
+    notes: Throughput, quota, and burst limits are agreed inside the B2B integration contract; not publicly
+      documented.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Contractual Governance
+    description: Operational limits, retry behavior, and escalation paths are specified in the partner
+      integration contract and supporting runbook rather than a public rate-limits page.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
