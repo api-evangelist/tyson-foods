@@ -52,11 +52,11 @@ common:
     url: https://ir.tysonfoods.com
   - type: Sustainability
     url: https://www.tysonfoods.com/sustainability
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.tysonfoods.com/legal/terms-and-conditions
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.tysonfoods.com/legal/privacy-policy
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/tyson-foods-context.jsonld
   - type: JSONSchema
     url: json-schema/tyson-foods-order-schema.json
