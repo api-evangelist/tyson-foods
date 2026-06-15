@@ -1,0 +1,271 @@
+{
+  "item": [
+    {
+      "id": "0f3d4355-fb0d-435c-9a16-1d87d00ec778",
+      "name": "Orders",
+      "description": {
+        "content": "Order management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "567ce4c4-09ae-47e8-9604-db57b285e085",
+          "name": "Get Orders",
+          "request": {
+            "name": "Get Orders",
+            "description": {
+              "content": "Retrieve a list of orders for a trading partner.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fcaa56e3-f0c9-4a4f-ab3e-d912a917a08e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orders\": [\n    {\n      \"id\": \"string\",\n      \"partnerId\": \"string\",\n      \"status\": \"string\",\n      \"items\": [\n        {\n          \"productId\": \"string\",\n          \"quantity\": 3719\n        },\n        {\n          \"productId\": \"string\",\n          \"quantity\": 3018\n        }\n      ],\n      \"createdAt\": \"1976-11-23T23:38:26.738Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"partnerId\": \"string\",\n      \"status\": \"string\",\n      \"items\": [\n        {\n          \"productId\": \"string\",\n          \"quantity\": 5648\n        },\n        {\n          \"productId\": \"string\",\n          \"quantity\": 6080\n        }\n      ],\n      \"createdAt\": \"2002-01-03T02:07:15.714Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6e4b505-5bee-4152-97de-1b0ce8fb302f",
+          "name": "Get Order by ID",
+          "request": {
+            "name": "Get Order by ID",
+            "description": {
+              "content": "Retrieve a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":orderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9e27cc6-5dc2-4072-a80d-6f0a71780b92",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"partnerId\": \"string\",\n  \"status\": \"string\",\n  \"items\": [\n    {\n      \"productId\": \"string\",\n      \"quantity\": 8936\n    },\n    {\n      \"productId\": \"string\",\n      \"quantity\": 2251\n    }\n  ],\n  \"createdAt\": \"2008-08-04T05:18:35.280Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2834abc1-c663-4b1d-8af5-f06fe6bd4d7d",
+      "name": "Shipments",
+      "description": {
+        "content": "Shipment tracking operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b40b5d9c-7fef-40fd-8d1b-d5f595234c47",
+          "name": "Get Shipments",
+          "request": {
+            "name": "Get Shipments",
+            "description": {
+              "content": "Retrieve shipment information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shipments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffdc990c-977a-45f5-8ca9-c7564010b937",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"shipments\": [\n    {\n      \"id\": \"string\",\n      \"orderId\": \"string\",\n      \"carrier\": \"string\",\n      \"trackingNumber\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"orderId\": \"string\",\n      \"carrier\": \"string\",\n      \"trackingNumber\": \"string\",\n      \"status\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tysonfoods.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d59052c2-48ac-48a9-bfaf-5ed443eb7fd4",
+    "name": "Tyson Foods EDI Integration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Tyson Foods provides EDI and API integration capabilities for trading partners and B2B supply chain connections, supporting order management and logistics operations.\n\nContact Support:\n Name: Tyson Foods",
+      "type": "text/plain"
+    }
+  }
+}
