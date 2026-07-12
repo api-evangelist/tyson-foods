@@ -39,6 +39,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: DomainSecurity
+    url: security/tyson-foods-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/tyson-foods
   - type: Website
@@ -65,3 +67,5 @@ common:
     url: vocabulary/tyson-foods-vocabulary.yml
   - type: SpectralRules
     url: rules/tyson-foods-rules.yml
+  - url: https://www.tysonfoods.com/news
+    type: Blog
