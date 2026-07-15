@@ -39,6 +39,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/tyson-foods-agentic-access.yml
   - type: DomainSecurity
     url: security/tyson-foods-domain-security.yml
   - type: LinkedIn
