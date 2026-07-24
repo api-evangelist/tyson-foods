@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: Tyson Foods EDI Integration Orders Shipments API
+  description: Tyson Foods provides EDI and API integration capabilities for trading partners and B2B supply chain connections, supporting order management and logistics operations.
+  version: 1.0.0
+  contact:
+    name: Tyson Foods
+    url: https://www.tysonfoods.com/
+servers:
+- url: https://api.tysonfoods.com
+  description: Production
+tags:
+- name: Shipments
+  description: Shipment tracking operations
+paths:
+  /shipments:
+    get:
+      operationId: getShipments
+      summary: Get Shipments
+      description: Retrieve shipment information.
+      tags:
+      - Shipments
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShipmentList'
+components:
+  schemas:
+    Shipment:
+      type: object
+      properties:
+        id:
+          type: string
+        orderId:
+          type: string
+        carrier:
+          type: string
+        trackingNumber:
+          type: string
+        status:
+          type: string
+    ShipmentList:
+      type: object
+      properties:
+        shipments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Shipment'
