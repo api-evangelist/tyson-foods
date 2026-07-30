@@ -3,6 +3,18 @@ description: >-
   Tyson Foods is one of the world's largest food companies and a Fortune 100 company, producing chicken, beef, pork, and
   prepared foods. Tyson Foods provides B2B integration capabilities for trading partners including EDI (Electronic Data
   Interchange) and API integrations for supply chain management, order processing, and logistics operations.
+accessModel:
+  pricing: enterprise
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://www.tysonfoods.com/favicon.ico
 url: https://www.tysonfoods.com
 created: '2026-05-03'
@@ -15,26 +27,34 @@ tags:
   - Fortune 100
   - Supply Chain
 apis:
-  - name: Tyson Foods EDI Integration API
-    description: >-
-      Tyson Foods provides EDI and API integration capabilities for trading partners and B2B supply chain connections.
-      The integration supports order management (purchase orders, order acknowledgments), shipment tracking (advance
-      ship notices, carrier information), and logistics operations for food supply chain partners.
-    image: https://www.tysonfoods.com/favicon.ico
-    humanURL: https://www.tysonfoods.com/business-solutions
-    baseURL: https://api.tysonfoods.com
-    tags:
-      - EDI
-      - Logistics
-      - Order Management
-      - Supply Chain
-    properties:
-      - type: Documentation
-        url: https://www.tysonfoods.com/business-solutions
-      - type: OpenAPI
-        url: openapi/tyson-foods-edi-integration-api-openapi.yml
-      - type: Trading Partner Portal
-        url: https://www.tysonfoods.com/business-solutions/trading-partner
+- aid: tyson-foods:tyson-foods-orders-api
+  name: Tyson Foods Orders API
+  description: Order management operations
+  humanURL: https://www.tysonfoods.com/business-solutions
+  baseURL: https://api.tysonfoods.com
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/tyson-foods-orders-api-openapi.yml
+  - type: Documentation
+    url: https://www.tysonfoods.com/business-solutions
+  - type: Trading Partner Portal
+    url: https://www.tysonfoods.com/business-solutions/trading-partner
+- aid: tyson-foods:tyson-foods-shipments-api
+  name: Tyson Foods Shipments API
+  description: Shipment tracking operations
+  humanURL: https://www.tysonfoods.com/business-solutions
+  baseURL: https://api.tysonfoods.com
+  tags:
+  - Shipments
+  properties:
+  - type: OpenAPI
+    url: openapi/tyson-foods-shipments-api-openapi.yml
+  - type: Documentation
+    url: https://www.tysonfoods.com/business-solutions
+  - type: Trading Partner Portal
+    url: https://www.tysonfoods.com/business-solutions/trading-partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
