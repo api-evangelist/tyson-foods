@@ -1,0 +1,16 @@
+{
+  "provider": "tyson-foods",
+  "sources": [
+    "tyson-foods-orders-api-openapi.yml",
+    "tyson-foods-shipments-api-openapi.yml"
+  ],
+  "outputs": [
+    "tyson-foods-orders-api-openapi.yml",
+    "tyson-foods-shipments-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

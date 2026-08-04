@@ -1,0 +1,118 @@
+openapi: 3.1.0
+info:
+  title: Tyson Foods EDI Integration API
+  description: >-
+    Tyson Foods provides EDI and API integration capabilities for trading
+    partners and B2B supply chain connections, supporting order management
+    and logistics operations.
+  version: 1.0.0
+  contact:
+    name: Tyson Foods
+    url: https://www.tysonfoods.com/
+servers:
+  - url: https://api.tysonfoods.com
+    description: Production
+paths:
+  /orders:
+    get:
+      operationId: getOrders
+      summary: Get Orders
+      description: Retrieve a list of orders for a trading partner.
+      tags:
+        - Orders
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderList'
+  /orders/{orderId}:
+    get:
+      operationId: getOrderById
+      summary: Get Order by ID
+      description: Retrieve a specific order.
+      tags:
+        - Orders
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /shipments:
+    get:
+      operationId: getShipments
+      summary: Get Shipments
+      description: Retrieve shipment information.
+      tags:
+        - Shipments
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShipmentList'
+tags:
+  - name: Orders
+    description: Order management operations
+  - name: Shipments
+    description: Shipment tracking operations
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        partnerId:
+          type: string
+        status:
+          type: string
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              productId:
+                type: string
+              quantity:
+                type: integer
+        createdAt:
+          type: string
+          format: date-time
+    OrderList:
+      type: object
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+    Shipment:
+      type: object
+      properties:
+        id:
+          type: string
+        orderId:
+          type: string
+        carrier:
+          type: string
+        trackingNumber:
+          type: string
+        status:
+          type: string
+    ShipmentList:
+      type: object
+      properties:
+        shipments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Shipment'
