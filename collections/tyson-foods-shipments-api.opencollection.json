@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tyson Foods EDI Integration Orders Shipments API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shipments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tysonfoods.com/shipments"
+          },
+          "docs": "Retrieve shipment information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

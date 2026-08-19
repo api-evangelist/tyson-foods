@@ -1,0 +1,190 @@
+{
+  "item": [
+    {
+      "id": "576b81c4-b5d7-479e-8a05-fee9d05e05c1",
+      "name": "Orders",
+      "description": {
+        "content": "Order management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "770ea9e7-70b7-4c1b-85d0-eb344a71d015",
+          "name": "Get Orders",
+          "request": {
+            "name": "Get Orders",
+            "description": {
+              "content": "Retrieve a list of orders for a trading partner.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d65dc3f5-20fe-4eb8-91cd-c6a3e27936a5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orders\": [\n    {\n      \"id\": \"string\",\n      \"partnerId\": \"string\",\n      \"status\": \"string\",\n      \"items\": [\n        {\n          \"productId\": \"string\",\n          \"quantity\": 4519\n        },\n        {\n          \"productId\": \"string\",\n          \"quantity\": 5185\n        }\n      ],\n      \"createdAt\": \"1961-01-04T19:59:37.140Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"partnerId\": \"string\",\n      \"status\": \"string\",\n      \"items\": [\n        {\n          \"productId\": \"string\",\n          \"quantity\": 7337\n        },\n        {\n          \"productId\": \"string\",\n          \"quantity\": 4138\n        }\n      ],\n      \"createdAt\": \"2003-03-03T18:18:10.551Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff243c5b-29ad-48a3-9c26-9ac3fb6e6c74",
+          "name": "Get Order by ID",
+          "request": {
+            "name": "Get Order by ID",
+            "description": {
+              "content": "Retrieve a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":orderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1b9bb6f-25cf-4997-8f1f-7c8dfe1663e2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"partnerId\": \"string\",\n  \"status\": \"string\",\n  \"items\": [\n    {\n      \"productId\": \"string\",\n      \"quantity\": 5248\n    },\n    {\n      \"productId\": \"string\",\n      \"quantity\": 3107\n    }\n  ],\n  \"createdAt\": \"2011-10-27T05:40:15.629Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tysonfoods.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1bfb3acf-61e5-4bcb-a367-dccd5852fed8",
+    "name": "Tyson Foods EDI Integration Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Tyson Foods provides EDI and API integration capabilities for trading partners and B2B supply chain connections, supporting order management and logistics operations.\n\nContact Support:\n Name: Tyson Foods",
+      "type": "text/plain"
+    }
+  }
+}
