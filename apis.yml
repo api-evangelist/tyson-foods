@@ -33,6 +33,8 @@ apis:
   humanURL: https://www.tysonfoods.com/business-solutions
   baseURL: https://api.tysonfoods.com
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
