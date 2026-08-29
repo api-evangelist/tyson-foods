@@ -73,6 +73,9 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: CapabilityMap
+    url: capabilities/tyson-foods-capability-edges.yml
+    name: Tyson Foods Business Capability Map
   - type: AgenticAccess
     url: agentic-access/tyson-foods-agentic-access.yml
   - type: DomainSecurity

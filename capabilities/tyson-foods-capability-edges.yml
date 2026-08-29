@@ -1,0 +1,26 @@
+slug: tyson-foods
+provider: Tyson Foods
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Retail & Consumer Goods
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Shipments
+  spec_file: tyson-foods-shipments-api-openapi.yml
+  capability_id: BC-520.50
+  capability_id_l1: BC-520
+  capability_name: Logistics Operations Management
+  confidence: 0.7
+  evidence: GET /shipments  getShipments  Get Shipments; "B2B supply chain connections, supporting order
+    management and logistics operations"
+  reason: Shipment retrieval for trading partners is logistics/shipment visibility within supply chain
+    execution; thin surface (single GET) so moderate confidence between logistics operations and order
+    fulfilment.
