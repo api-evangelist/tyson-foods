@@ -3,6 +3,18 @@ description: >-
   Tyson Foods is one of the world's largest food companies and a Fortune 100 company, producing chicken, beef, pork, and
   prepared foods. Tyson Foods provides B2B integration capabilities for trading partners including EDI (Electronic Data
   Interchange) and API integrations for supply chain management, order processing, and logistics operations.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: unknown
