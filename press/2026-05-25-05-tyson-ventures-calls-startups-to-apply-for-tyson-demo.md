@@ -1,7 +1,9 @@
 ---
 title: Tyson Ventures Calls Startups to Apply for Tyson Demo ...
 url: https://www.tysonfoods.com/news/news-releases/2025/3/tyson-ventures-calls-startups-apply-tyson-demo-day-2025
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Tyson Foods" press release artificial intelligence'
 position: 5
 source: serpapi-google

@@ -1,7 +1,9 @@
 ---
 title: Tyson Foods elevates customer search experience with an ...
 url: https://aws.amazon.com/blogs/machine-learning/tyson-foods-elevates-customer-search-experience-with-an-ai-powered-conversational-assistant/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Tyson Foods" press release artificial intelligence'
 position: 4
 source: serpapi-google
