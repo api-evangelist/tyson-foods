@@ -49,6 +49,13 @@ paths:
                 $ref: '#/components/schemas/Order'
 components:
   schemas:
+    OrderList:
+      type: object
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
     Order:
       type: object
       properties:
@@ -70,10 +77,3 @@ components:
         createdAt:
           type: string
           format: date-time
-    OrderList:
-      type: object
-      properties:
-        orders:
-          type: array
-          items:
-            $ref: '#/components/schemas/Order'
