@@ -29,6 +29,13 @@ paths:
                 $ref: '#/components/schemas/ShipmentList'
 components:
   schemas:
+    ShipmentList:
+      type: object
+      properties:
+        shipments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Shipment'
     Shipment:
       type: object
       properties:
@@ -42,10 +49,3 @@ components:
           type: string
         status:
           type: string
-    ShipmentList:
-      type: object
-      properties:
-        shipments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Shipment'
